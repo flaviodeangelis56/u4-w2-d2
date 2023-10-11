@@ -16,7 +16,9 @@ public class RubricaTelefonica {
         rubrica.remove(nome);
     }
 
+
     public String cercaConNumero(String numero) {
+        System.out.println(rubrica.entrySet());
         for (Map.Entry<String, String> contatto : rubrica.entrySet()) {
             if (contatto.getValue().equals(numero)) {
                 return contatto.getKey();
@@ -25,7 +27,7 @@ public class RubricaTelefonica {
         return "Contatto non esistente";
     }
 
-    public String cercaTelefonoPerNome(String nome) {
+    public String cercaConNome(String nome) {
         String numero = rubrica.get(nome);
         return numero != null ? numero : "Contatto non esistente";
     }
